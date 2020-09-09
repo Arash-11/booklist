@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #fff;
+    background-image: url("./shattered.png");
+    background-repeat: repeat;
+}
+
+/* for navbar */
+.AppBar_backgroundColor {
+    background-color: #ff3d00 !important;
+}
+
+.searchAppBar_icon {
+    margin-right: 5px;
+}
+
+/* h4 heading "BookList" */
+.MuiTypography-h4 {
+    font-size: 2rem !important;
+}
+
+.makeStyles-inputInput-6::placeholder {
+    color: #fff !important;
+}
+
+form {
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    width: 40%;
+    background: #fff;
+    padding: 1%;
+    border-radius: 7px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+form input {
+    width: 70%;
+    border: none;
+    padding: 4px;
+    outline: none;
+    font-size: 1.2em;
+    font-family: inherit;
+    resize: none;
+}
+
+form input:nth-child(1) {
+    margin-right: 1px;
+}
+
+form input:nth-child(2) {
+    margin-top: 20px;
+}
+
+.addBookButton_style {
+    display: inline-block;
+    position: absolute;
+    margin-left: 17%;
+    margin-top: 7%;
+}
+
+/* Material UI class for + button */
+.MuiFab-sizeMedium {
+    background-color: #ff3d00 !important;
+    color: #fff !important;
+}
+
+.bookCards_container {
+    padding: 1% 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bookCard_style {
+    font-family: 'Poppins', sans-serif;
+    width: 25%;
+    margin: 3%;
+    background: #fff;
+    padding: 1.5% 1.5% 0;
+    border-radius: 3px;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+.bookCard_style h3 {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.bookCard_style h4 {
+    margin-top: 2%;
+    margin-bottom: 10%;
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.bookCard_style div {
+    margin-top: 7%;
+}
+
+.bookCard_style button {
+    cursor: pointer;
+}
+
+.switch_style {
+    margin-right: 10%;
+}
+
+/* Material UI class for switch toggler */
+.Mui-checked {
+    color: #ff3d00 !important;
+}
+
+/* Material UI class for switch track */
+.MuiSwitch-track {
+    background-color: #ff6e40 !important;
+}
+
+.trash_icon {
+    float: right;
+    position: relative;
+    bottom: 20px;
+}
+
+.trash_icon button {
+    padding: 0;
+    margin: 0;
+}
+
+
+@media screen and (max-width: 600px) {
+    .MuiTypography-h4 {
+        font-size: 1.5rem !important;
+    }
+
+    .makeStyles-search-3 {
+        width: 45vw !important;
+    }
+
+    .addBook_form {
+        width: 60vw;
+        padding: 2%;
+    }
+
+    .addBookButton_style {
+        transform: scale(0.9);
+        margin-left: 13%;
+        margin-top: 11%;
+    }
+
+    .bookCards_container {
+        padding: 10% 3%;
+    }
+
+    .bookCard_style {
+        width: 40%;
+        margin: 3%;
+        padding: 3% 5% 1.5%;
+    }
+
+    .bookCard_style h3 {
+        font-size: 1.3rem;
+    }
+    
+    .bookCard_style h4 {
+        margin-top: 4%;
+        margin-bottom: 15%;
+        font-size: 1rem;
+    }
+
+    .trash_icon {
+        bottom: 9px;
+    }
+}
