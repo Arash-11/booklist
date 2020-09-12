@@ -57,7 +57,7 @@ function SwitchLabel() {
 
 function BookDetails(props) {
     function handleClick() {
-        props.deleteBook(props.title, props.author);
+        props.deleteBook(props.id);
     }
 
     return (
