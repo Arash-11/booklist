@@ -1,5 +1,6 @@
 import React from 'react';
 import { auth } from '../Firebase';
+import { Link } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -10,6 +11,7 @@ import IconButton from '@material-ui/core/IconButton';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,7 +70,6 @@ function MainpageNavBar(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
   const user = auth.currentUser;
 
 
@@ -81,7 +82,7 @@ function MainpageNavBar(props) {
   };
 
   function signOut() {
-    user.signOut().then(function() {
+    auth.signOut().then(function() {
       // Sign-out successful.
       console.log('Sign-out successful.')
     }).catch(function(error) {
@@ -153,8 +154,12 @@ function MainpageNavBar(props) {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={signOut}>Sign Out</MenuItem>
-                <MenuItem onClick={deleteAccount}>Delete Account</MenuItem>
+                <MenuItem onClick={signOut}>
+                  <Link to="/">Log Out</Link>
+                </MenuItem>
+                <MenuItem onClick={deleteAccount}>
+                  <Link to="/register">Delete Account</Link>
+                </MenuItem>
               </Menu>
             </div>
         </Toolbar>

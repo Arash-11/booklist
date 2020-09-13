@@ -3,6 +3,7 @@ import MainpageNavBar from './components/MainpageNavBar';
 import InputDetails from './components/InputDetails';
 import BookDetails from './components/BookDetails';
 import { db , auth } from './Firebase';
+// import { Link } from 'react-router-dom';
 
 
 function Mainpage() {
@@ -44,7 +45,7 @@ function Mainpage() {
             } 
             else return;
         });
-    }, []);
+    }, [userID]);
 
 
     function showMatches(searchWord) {

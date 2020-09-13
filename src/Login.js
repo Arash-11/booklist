@@ -35,15 +35,22 @@ function Login() {
         });
     }
 
-    function signIntoAccount() {
+    // will use this variable to determine which page (or route) to take user to.
+    let toSignIn = true;
+
+    async function signIntoAccount() {
         if (setRestrictions()) {
-            auth.signInWithEmailAndPassword(userDetails.email, userDetails.password)
+            await auth.signInWithEmailAndPassword(userDetails.email, userDetails.password)
                 .catch(function(error) {
                     console.log(error.code, error.message);
+                    alert('Invalid email and password.');
+                    return toSignIn = false;
                 });
+            console.log('sign-in successful');
         }
         else {
             alert("Check your input details again");
+            toSignIn = false;
         };
     }
     
@@ -61,7 +68,7 @@ function Login() {
                 <TextField
                     // error
                     // helperText="Incorrect entry."
-                    id="standard-error-helper-text"
+                    // id="standard-error-helper-text"
                     type="email"
                     name="email"
                     value={userDetails.email}
@@ -73,7 +80,7 @@ function Login() {
                 <TextField
                     // error
                     // helperText="Incorrect entry."
-                    id="standard-error-helper-text"
+                    // id="standard-error-helper-text"
                     type="password"
                     name="password"
                     value={userDetails.password}
@@ -83,7 +90,10 @@ function Login() {
                     style={{ marginTop: '5%' }}
                 />
                 <Button variant="contained" type="submit" onClick={signIntoAccount} className="form_button">
-                    <Link to="/mainpage" className="main_text"> Login </Link>
+                    { toSignIn 
+                        ? <Link to="/mainpage" className="main_text"> Login </Link>
+                        : <Link to="/" className="main_text"> Login </Link>
+                    }
                 </Button>
                 <p>
                     Don't have an account yet?
