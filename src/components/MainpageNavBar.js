@@ -1,10 +1,15 @@
 import React from 'react';
+import { auth } from '../Firebase';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
+import IconButton from '@material-ui/core/IconButton';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import MenuItem from '@material-ui/core/MenuItem';
+import Menu from '@material-ui/core/Menu';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,8 +63,42 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-function NavBar(props) {
+function MainpageNavBar(props) {
+
   const classes = useStyles();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+
+  const user = auth.currentUser;
+
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  function signOut() {
+    user.signOut().then(function() {
+      // Sign-out successful.
+      console.log('Sign-out successful.')
+    }).catch(function(error) {
+      // An error happened.
+      console.log("An error happened when signing out.");
+    });
+  }
+
+  function deleteAccount() {
+    user.delete().then(function() {
+      // User deleted.
+      console.log('Account deleted.')
+    }).catch(function(error) {
+      // An error happened.
+      console.log("An error happened when deleting account.");
+    });
+  }
 
   function handleChange(event) {
     const inputValue = event.target.value;
@@ -89,10 +128,39 @@ function NavBar(props) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
+          <div>
+              <IconButton
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={open}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={signOut}>Sign Out</MenuItem>
+                <MenuItem onClick={deleteAccount}>Delete Account</MenuItem>
+              </Menu>
+            </div>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
 
-export default NavBar;
+export default MainpageNavBar;

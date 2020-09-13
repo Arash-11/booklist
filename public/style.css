@@ -29,7 +29,65 @@ body {
     color: #fff !important;
 }
 
-form {
+.form_style, .addBook_form {
+    position: relative;
+    margin: auto;
+    margin-top: 30px;
+    background: #fff;
+    padding: 1%;
+    box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+.form_style {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding: 20vh auto;
+    margin-top: 5%;
+}
+
+.form_style p {
+    margin-bottom: 3%;
+}
+
+.form_button {
+    width: 40%;
+    margin: 12% auto 7% !important;
+    background: #ff3d00 !important;
+}
+
+.main_text {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+.sub_text {
+    text-decoration: none;
+    color: #ff3d00;
+}
+
+/* .emailTextField, .passwordTextField {
+    position: block !important;
+    margin-bottom: 3% !important;
+}
+
+.emailTextField {
+
+}
+
+.passwordTextField {
+    
+} */
+
+.addBook_form {
+    width: 40%;
+    background: #fff;
+    border-radius: 7px;
+}
+/* form {
     position: relative;
     margin: auto;
     margin-top: 30px;
@@ -38,9 +96,9 @@ form {
     padding: 1%;
     border-radius: 7px;
     box-shadow: 0 1px 5px rgb(138, 137, 137);
-}
+} */
 
-form input {
+.addBook_form input {
     width: 70%;
     border: none;
     padding: 4px;
@@ -50,11 +108,11 @@ form input {
     resize: none;
 }
 
-form input:nth-child(1) {
+.addBook_form input:nth-child(1) {
     margin-right: 1px;
 }
 
-form input:nth-child(2) {
+.addBook_form input:nth-child(2) {
     margin-top: 20px;
 }
 

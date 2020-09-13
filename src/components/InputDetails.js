@@ -65,7 +65,7 @@ function InputDetails(props) {
       });
     }
 
-    function submitBook(event) {
+    function submitBook() {
       props.onAdd(values);
       setValues({
         title: '',

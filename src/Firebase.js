@@ -1,21 +1,21 @@
-import * as firebase from 'firebase';
+import firebase from 'firebase';
+import "firebase/auth";
 import 'firebase/firestore';
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBZ7UVz0lX9OKnKGmNmX01HHOPfC0EJn-k",
-    authDomain: "booklist-11.firebaseapp.com",
-    databaseURL: "https://booklist-11.firebaseio.com",
-    projectId: "booklist-11",
-    storageBucket: "booklist-11.appspot.com",
-    messagingSenderId: "419785655892",
-    appId: "1:419785655892:web:facc5b63782bd70ded0fc1",
-    measurementId: "G-02QCCDTFHK"
-};
+    apiKey: "AIzaSyC_85gpvls9jv6bNaZiw2DalADh-agJZvI",
+    authDomain: "booklist-111.firebaseapp.com",
+    databaseURL: "https://booklist-111.firebaseio.com",
+    projectId: "booklist-111",
+    storageBucket: "booklist-111.appspot.com",
+    messagingSenderId: "794105790950",
+    appId: "1:794105790950:web:1932cb8b11ccdeed68d627",
+    measurementId: "G-6KL48C8L1Y"
+  };
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+const auth = firebase.auth();
 const db = firebase.firestore();
 
-export { db };
+export { db , auth };
