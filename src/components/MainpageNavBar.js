@@ -155,7 +155,7 @@ function MainpageNavBar(props) {
                 onClose={handleClose}
               >
                 <MenuItem onClick={signOut}>
-                  <Link to="/">Log Out</Link>
+                  <Link to="/login">Log Out</Link>
                 </MenuItem>
                 <MenuItem onClick={deleteAccount}>
                   <Link to="/register">Delete Account</Link>

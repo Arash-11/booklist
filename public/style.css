@@ -64,39 +64,22 @@ body {
     font-size: 1.3em;
 }
 
+.inactive_state {
+    opacity: 0.6;
+    cursor: default;
+}
+
 .sub_text {
     text-decoration: none;
     color: #ff3d00;
 }
 
-/* .emailTextField, .passwordTextField {
-    position: block !important;
-    margin-bottom: 3% !important;
-}
-
-.emailTextField {
-
-}
-
-.passwordTextField {
-    
-} */
 
 .addBook_form {
     width: 40%;
     background: #fff;
     border-radius: 7px;
 }
-/* form {
-    position: relative;
-    margin: auto;
-    margin-top: 30px;
-    width: 40%;
-    background: #fff;
-    padding: 1%;
-    border-radius: 7px;
-    box-shadow: 0 1px 5px rgb(138, 137, 137);
-} */
 
 .addBook_form input {
     width: 70%;

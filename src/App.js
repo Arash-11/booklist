@@ -1,7 +1,7 @@
 import React from 'react';
-import Mainpage from './Mainpage';
 import Register from './Register';
 import Login from './Login';
+import Mainpage from './Mainpage';
 import {
     BrowserRouter as Router,
     Switch,
@@ -10,18 +10,16 @@ import {
 
 
 function App() {
-
     return (
         <Router>
             <Switch>
-                <Route path="/" component={Login} exact />
-                <Route path="/register" component={Register} />
-                <Route path="/mainpage" component={Mainpage} />
+                <Route path="/login" component={Login} exact />
+                <Route path="/register" component={Register} exact />
+                <Route path="/mainpage" component={Mainpage} exact />
                 <Route component={Error} />
             </Switch>
         </Router>
     );
-
 }
 
 export default App;

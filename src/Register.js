@@ -20,15 +20,14 @@ function Register() {
 
     const classes = useStyles();
 
-    // if true, user will be taken to mainpage upon successful registration.
-    // if false, user will get an alert and still be shown the registration page.
-    let pathDecider = true;
-
     const [ userDetails, setUserDetails ] = useState({
         email: '',
         password: '',
         confirmPassword: ''
     });
+    const { email, password, confirmPassword } = userDetails;
+
+    const [ validationState, setValidationState ] = useState(false);
 
     function handleChange(event) {
         const { name, value } = event.target;
@@ -38,119 +37,75 @@ function Register() {
                 [name]: value
             }
         });
+        if (name === 'confirmPassword') {
+            if (email.length > 5 && password === value) {
+                setValidationState(true);
+            }
+            else setValidationState(false);
+        }
     }
 
     function createUser() {
-        if (setRestrictions()) {
-            auth.createUserWithEmailAndPassword(userDetails.email, userDetails.password)
-                .catch((error) => {
-                    pathDecider = false;
-                    console.log(error.code, error.message);
-                });
-        }
-        else {
-            pathDecider = false;
-            alert("Check your input details again");
-        };
+        auth.createUserWithEmailAndPassword(email, password)
+            .catch((error) => {
+                console.log(error.code, error.message);
+            });
     }
-    
-    function setRestrictions() {
-        if (userDetails.email.length > 5 && userDetails.password.length > 5) {
-            if (userDetails.password !== userDetails.confirmPassword) {
-                pathDecider = false;
-                alert("The passwords do not match. Please try again.")
-            }
-            return true;
-        }
-        else {
-            pathDecider = false;
-            return false;
-        };
+
+    function showError() {
+        alert('Invalid input fields. Please try again.')
     }
+
 
     return (
         <>
             <FormNavBar />
             <form className={classes.root + ' form_style'} noValidate autoComplete="off">
-
-            { pathDecider 
-                ?    <>
-                        <TextField
-                            type="email"
-                            name="email"
-                            value={userDetails.email}
-                            label="Email Address"
-                            onChange={handleChange}
-                            className="emailTextField"
-                            style={{ marginTop: '5%' }}
-                        />
-                        <TextField
-                            type="password"
-                            name="password"
-                            value={userDetails.password}
-                            label="Password"
-                            onChange={handleChange}
-                            className="passwordTextField"
-                            style={{ marginTop: '5%' }}
-                        />
-                        <TextField
-                            type="password"
-                            name="confirmPassword"
-                            value={userDetails.confirmPassword}
-                            label="Confirm Password"
-                            onChange={handleChange}
-                            className="passwordTextField"
-                            style={{ marginTop: '5%' }}
-                        />
-                    </>
-                :   <>
-                        <TextField
-                            error
-                            helperText="Incorrect entry."
-                            id="standard-error-helper-text"
-                            type="email"
-                            name="email"
-                            value={userDetails.email}
-                            label="Email Address"
-                            onChange={handleChange}
-                            className="emailTextField"
-                            style={{ marginTop: '5%' }}
-                        />
-                        <TextField
-                            error
-                            helperText="Incorrect entry."
-                            id="standard-error-helper-text"
-                            type="password"
-                            name="password"
-                            value={userDetails.password}
-                            label="Password"
-                            onChange={handleChange}
-                            className="passwordTextField"
-                            style={{ marginTop: '5%' }}
-                        />
-                        <TextField
-                            error
-                            helperText="Incorrect entry."
-                            id="standard-error-helper-text"
-                            type="password"
-                            name="confirmPassword"
-                            value={userDetails.confirmPassword}
-                            label="Confirm Password"
-                            onChange={handleChange}
-                            className="passwordTextField"
-                            style={{ marginTop: '5%' }}
-                        />
-                    </>
-            }
-                <Button variant="contained" type="submit" onClick={createUser} className="form_button">
-                    { pathDecider 
-                        ? <Link to="/mainpage" className="main_text"> Register </Link>
-                        : <Link to="/register" className="main_text"> Register </Link> 
-                    }
-                </Button>
+                <TextField
+                    type="email"
+                    name="email"
+                    value={email}
+                    onChange={handleChange}
+                    label="Email Address"
+                    className="emailTextField"
+                    style={{ marginTop: '5%' }}
+                    // error
+                    // helperText="Incorrect entry."
+                    // id="standard-error-helper-text"
+                />
+                <TextField
+                    type="password"
+                    name="password"
+                    value={password}
+                    onChange={handleChange}
+                    label="Password (minimum 6 characters)"
+                    className="passwordTextField"
+                    style={{ marginTop: '5%' }}
+                    // error
+                    // helperText="Incorrect entry."
+                />
+                <TextField
+                    type="password"
+                    name="confirmPassword"
+                    value={confirmPassword}
+                    onChange={handleChange}
+                    label="Confirm Password"
+                    className="passwordTextField"
+                    style={{ marginTop: '5%' }}
+                    // error
+                    // helperText="Incorrect entry."
+                />
+                { validationState
+                    ? (<Button variant="contained" type="submit" onClick={createUser} className="form_button">
+                            <Link to="/mainpage" className="main_text">Register</Link>
+                        </Button>)
+                    : (<Button variant="contained" type="submit" onClick={showError} className="form_button">
+                            <h4 className="main_text inactive_state">Register</h4>
+                        </Button>)
+                }
                 <p>
                     Have an account?
-                    <Link to="/" className="sub_text"> Login </Link>
+                    <Link to="/login" className="sub_text"> Login </Link>
                 </p>
             </form>
         </>
