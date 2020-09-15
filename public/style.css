@@ -16,17 +16,26 @@ body {
     background-color: #ff3d00 !important;
 }
 
+.app_title {
+    display: inline-block !important;
+}
+
 .searchAppBar_icon {
     margin-right: 5px;
 }
 
-/* h4 heading "BookList" */
-.MuiTypography-h4 {
-    font-size: 2rem !important;
+/* h5 heading "BookList" */
+.MuiTypography-h5 {
+    font-size: 1.5rem !important;
 }
 
 .makeStyles-inputInput-6::placeholder {
     color: #fff !important;
+}
+
+.account_icon {
+    margin-left: 2%;
+    transform: scale(1.2);
 }
 
 .form_style, .addBook_form {
@@ -43,17 +52,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 30%;
+    width: 40%;
     padding: 20vh auto;
-    margin-top: 5%;
+    margin-top: 10vh;
 }
 
 .form_style p {
-    margin-bottom: 3%;
+    text-align: center;
+    width: 90%;
+    margin-bottom: 3vh;
 }
 
 .form_button {
-    width: 40%;
+    width: 80%;
     margin: 12% auto 7% !important;
     background: #ff3d00 !important;
 }
@@ -65,7 +76,7 @@ body {
 }
 
 .inactive_state {
-    opacity: 0.6;
+    opacity: 0.8;
     cursor: default;
 }
 
@@ -132,14 +143,14 @@ body {
 }
 
 .bookCard_style h3 {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 500;
 }
 
 .bookCard_style h4 {
     margin-top: 2%;
     margin-bottom: 10%;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     font-style: italic;
 }
@@ -153,6 +164,12 @@ body {
 }
 
 .switch_style {
+    margin-left: 3%;
+    margin-bottom: 8%;
+    transform: scale(1.05);
+}
+
+.toggle_style {
     margin-right: 10%;
 }
 
@@ -166,25 +183,23 @@ body {
     background-color: #ff6e40 !important;
 }
 
-.trash_icon {
-    float: right;
-    position: relative;
-    bottom: 20px;
-}
 
-.trash_icon button {
-    padding: 0;
-    margin: 0;
-}
+@media screen and (max-width: 700px) {
+    /* h5 heading "BookList" */
+    .MuiTypography-h5 {
+        font-size: 1.2rem !important;
+    }
 
-
-@media screen and (max-width: 600px) {
-    .MuiTypography-h4 {
-        font-size: 1.5rem !important;
+    .app_title {
+        font-size: 10px;
     }
 
     .makeStyles-search-3 {
         width: 45vw !important;
+    }
+
+    .form_style {
+        width: 75%;
     }
 
     .addBook_form {
@@ -209,16 +224,12 @@ body {
     }
 
     .bookCard_style h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .bookCard_style h4 {
         margin-top: 4%;
         margin-bottom: 15%;
-        font-size: 1rem;
-    }
-
-    .trash_icon {
-        bottom: 9px;
+        font-size: 0.9rem;
     }
 }

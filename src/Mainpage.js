@@ -75,7 +75,7 @@ function Mainpage() {
             .collection("books")
             .add({
                 title: newBook.title,
-                author: newBook.author
+                author: newBook.author,
             })
             .then(function(docRef) {
                 console.log("Document written with ID: ", docRef.id);
@@ -109,17 +109,19 @@ function Mainpage() {
                 console.error("Error removing document: ", error);
             });
 
-        setBooks(bookArray => {
-            return bookArray.filter(item => {
-                return item.id !== id;
+        setTimeout(() => {
+            setBooks(bookArray => {
+                return bookArray.filter(item => {
+                    return item.id !== id;
+                });
             });
-        });
-
-        setBooksToDisplay(bookArray => {
-            return bookArray.filter(item => {
-                return item.id !== id;
+    
+            setBooksToDisplay(bookArray => {
+                return bookArray.filter(item => {
+                    return item.id !== id;
+                });
             });
-        });
+        }, 800);
     }
     
 
@@ -135,6 +137,7 @@ function Mainpage() {
                             id={book.id}
                             title={book.title}
                             author={book.author}
+                            readStatus={book.status}
                             deleteBook={deleteBook}
                         />
                     );

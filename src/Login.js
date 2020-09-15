@@ -38,17 +38,18 @@ function Login() {
 
     function logIn() {
         auth.signInWithEmailAndPassword(email, password)
+            .then(() => window.location.pathname = '/mainpage')
             .catch(function(error) {
                 console.log(error.code, error.message);
                 alert('Invalid email and password.');
-                window.location.pathname='/login';
+                window.location.pathname = '/';
             });
     }
 
     return (
         <>
             <FormNavBar />
-            <form className={classes.root + ' form_style'} noValidate autoComplete="off">
+            <form className={classes.root + ' form_style'} onSubmit={logIn} noValidate autoComplete="off">
                 <TextField
                     type="email"
                     name="email"
@@ -56,7 +57,7 @@ function Login() {
                     label="Email Address"
                     onChange={handleChange}
                     className="emailTextField"
-                    style={{ marginTop: '5%' }}
+                    style={{ marginTop: '5%', width:'80%' }}
                     // error
                     // helperText="Incorrect entry."
                     // id="standard-error-helper-text"
@@ -68,12 +69,17 @@ function Login() {
                     label="Password"
                     onChange={handleChange}
                     className="passwordTextField"
-                    style={{ marginTop: '5%' }}
+                    style={{ marginTop: '5%', width:'80%' }}
                     // error
                     // helperText="Incorrect entry."
                     // id="standard-error-helper-text"
                 />
-                    <Button variant="contained" type="submit" onClick={logIn} className="form_button">
+                    {/* <Link to="/mainpage">
+                        <Button variant="contained" type="submit" onClick={logIn}  className="form_button">
+                            <h4 className="main_text">Login</h4>
+                        </Button>
+                    </Link> */}
+                    <Button variant="contained" type="submit"  className="form_button">
                         <Link to="/mainpage" className="main_text">Login</Link>
                     </Button>
                 <p>

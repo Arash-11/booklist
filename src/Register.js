@@ -38,7 +38,7 @@ function Register() {
             }
         });
         if (name === 'confirmPassword') {
-            if (email.length > 5 && password === value) {
+            if (email.length > 5 && password.length > 5 && password === value) {
                 setValidationState(true);
             }
             else setValidationState(false);
@@ -49,6 +49,7 @@ function Register() {
         auth.createUserWithEmailAndPassword(email, password)
             .catch((error) => {
                 console.log(error.code, error.message);
+                window.location.pathname = '/register';
             });
     }
 
@@ -67,8 +68,7 @@ function Register() {
                     value={email}
                     onChange={handleChange}
                     label="Email Address"
-                    className="emailTextField"
-                    style={{ marginTop: '5%' }}
+                    style={{ marginTop: '5%', width:'80%' }}
                     // error
                     // helperText="Incorrect entry."
                     // id="standard-error-helper-text"
@@ -78,9 +78,8 @@ function Register() {
                     name="password"
                     value={password}
                     onChange={handleChange}
-                    label="Password (minimum 6 characters)"
-                    className="passwordTextField"
-                    style={{ marginTop: '5%' }}
+                    label="Password (min. 6 characters)"
+                    style={{ marginTop: '5%', width: '80%' }}
                     // error
                     // helperText="Incorrect entry."
                 />
@@ -90,22 +89,21 @@ function Register() {
                     value={confirmPassword}
                     onChange={handleChange}
                     label="Confirm Password"
-                    className="passwordTextField"
-                    style={{ marginTop: '5%' }}
+                    style={{ marginTop: '5%', width:'80%' }}
                     // error
                     // helperText="Incorrect entry."
                 />
                 { validationState
-                    ? (<Button variant="contained" type="submit" onClick={createUser} className="form_button">
+                    ? ( <Button variant="contained" type="submit" onClick={createUser} className="form_button">
                             <Link to="/mainpage" className="main_text">Register</Link>
                         </Button>)
-                    : (<Button variant="contained" type="submit" onClick={showError} className="form_button">
+                    : (<Button variant="contained" type="submit" onClick={showError} className="form_button inactive_state">
                             <h4 className="main_text inactive_state">Register</h4>
                         </Button>)
                 }
                 <p>
                     Have an account?
-                    <Link to="/login" className="sub_text"> Login </Link>
+                    <Link to="/" className="sub_text"> Login </Link>
                 </p>
             </form>
         </>

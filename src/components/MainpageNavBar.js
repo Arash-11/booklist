@@ -87,18 +87,22 @@ function MainpageNavBar(props) {
       console.log('Sign-out successful.')
     }).catch(function(error) {
       // An error happened.
-      console.log("An error happened when signing out.");
+      console.log("An error occurred when signing out.");
     });
   }
 
   function deleteAccount() {
-    user.delete().then(function() {
-      // User deleted.
-      console.log('Account deleted.')
-    }).catch(function(error) {
-      // An error happened.
-      console.log("An error happened when deleting account.");
-    });
+    const result = window.confirm('Deleting your account will erase all the data. Do you want to continue?');
+    if (result) {
+      user.delete().then(function() {
+        // User deleted.
+        console.log('Account deleted.')
+      }).catch(function(error) {
+        // An error happened.
+        console.log("An error occurred when deleting account.");
+      })
+    }
+    else return window.location.pathname = "/mainpage";
   }
 
   function handleChange(event) {
@@ -111,7 +115,7 @@ function MainpageNavBar(props) {
     <div className={classes.root}>
       <AppBar position="static" className="AppBar_backgroundColor">
         <Toolbar>
-          <Typography className={classes.title} variant="h4" noWrap style={{ padding: '1.2%' }}>
+          <Typography className={classes.title + ' app_title'} variant="h5" noWrap style={{ padding: '1.2%' }}>
             <i className="fas fa-bookmark searchAppBar_icon"></i>
             BookList
           </Typography>
@@ -129,7 +133,7 @@ function MainpageNavBar(props) {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          <div>
+          <div className="account_icon">
               <IconButton
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
@@ -155,10 +159,10 @@ function MainpageNavBar(props) {
                 onClose={handleClose}
               >
                 <MenuItem onClick={signOut}>
-                  <Link to="/login">Log Out</Link>
+                  <Link to="/" style={{ textDecoration: 'none' }}>Log out</Link>
                 </MenuItem>
                 <MenuItem onClick={deleteAccount}>
-                  <Link to="/register">Delete Account</Link>
+                  Delete account
                 </MenuItem>
               </Menu>
             </div>
