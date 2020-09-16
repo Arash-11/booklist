@@ -95,14 +95,13 @@ function MainpageNavBar(props) {
     const result = window.confirm('Deleting your account will erase all the data. Do you want to continue?');
     if (result) {
       user.delete().then(function() {
-        // User deleted.
         console.log('Account deleted.')
+        window.location.pathname = '/register';
       }).catch(function(error) {
-        // An error happened.
-        console.log("An error occurred when deleting account.");
+        alert("An error occurred when deleting account. Please try again");
       })
     }
-    else return window.location.pathname = "/mainpage";
+    else return;
   }
 
   function handleChange(event) {
@@ -159,7 +158,7 @@ function MainpageNavBar(props) {
                 onClose={handleClose}
               >
                 <MenuItem onClick={signOut}>
-                  <Link to="/" style={{ textDecoration: 'none' }}>Log out</Link>
+                  <Link to="/" className="logout_btn">Log out</Link>
                 </MenuItem>
                 <MenuItem onClick={deleteAccount}>
                   Delete account

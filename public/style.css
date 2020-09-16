@@ -33,6 +33,11 @@ body {
     color: #fff !important;
 }
 
+.logout_btn, .logout_btn:hover, .logout_btn:visited, .logout_btn:active {
+    text-decoration: none;
+    color: inherit;
+}
+
 .account_icon {
     margin-left: 2%;
     transform: scale(1.2);
@@ -57,6 +62,19 @@ body {
     margin-top: 10vh;
 }
 
+.form_style_h1 {
+    color: #ff3d00;
+    text-align: center;
+    font-size: 5rem;
+    margin-bottom: 3%;
+}
+
+.form_style_h4 {
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 10%;
+}
+
 .form_style p {
     text-align: center;
     width: 90%;
@@ -69,10 +87,15 @@ body {
     background: #ff3d00 !important;
 }
 
+.errorPage-text {
+    font-size: 1.1rem;
+}
+
 .main_text {
     text-decoration: none;
     color: #fff;
     font-size: 1.3em;
+    width: 100%;
 }
 
 .inactive_state {
@@ -200,6 +223,16 @@ body {
 
     .form_style {
         width: 75%;
+    }
+
+    .form_style_h1 {
+        font-size: 3rem;
+        margin: 5% auto;
+    }
+    
+    .form_style_h4 {
+        font-size: 1.3rem;
+        margin-bottom: 13%;
     }
 
     .addBook_form {

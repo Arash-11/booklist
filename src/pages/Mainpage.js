@@ -1,8 +1,8 @@
 import React, { useState , useEffect } from 'react';
-import MainpageNavBar from './components/MainpageNavBar';
-import InputDetails from './components/InputDetails';
-import BookDetails from './components/BookDetails';
-import { db , auth } from './Firebase';
+import MainpageNavBar from '../components/MainpageNavBar';
+import InputDetails from '../components/InputDetails';
+import BookDetails from '../components/BookDetails';
+import { db , auth } from '../Firebase';
 
 
 function Mainpage() {
