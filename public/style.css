@@ -208,17 +208,28 @@ body {
 
 
 @media screen and (max-width: 700px) {
+    /* material-ui classname for the search bar */
+    /* .jss5 {
+        width: 5vw !important;
+    } */
+
     /* h5 heading "BookList" */
-    .MuiTypography-h5 {
+    /* .MuiTypography-h5 {
+        font-size: 1.1rem !important;
+    } */
+
+    .app_title {
         font-size: 1.2rem !important;
     }
 
-    .app_title {
-        font-size: 10px;
+    .makeStyles-search-3 {
+        width: 40vw !important;
     }
 
-    .makeStyles-search-3 {
-        width: 45vw !important;
+    .account_icon {
+        margin-left: 1%;
+        margin-right: -2%;
+        transform: scale(1.1);
     }
 
     .form_style {
