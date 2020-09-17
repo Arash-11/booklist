@@ -243,7 +243,14 @@ body {
         width: 40vw !important;
     }
 
-    .account_icon {
+    /* account icon - deployment */
+    div.jss3 + .account_icon {
+        margin-left: 0;
+        transform: scale(1.4);
+    }
+
+    /* account icon - local */
+    .makeStyles-search-3 + .account_icon {
         margin-left: -60%;
         transform: scale(1.4);
     }
