@@ -225,16 +225,15 @@ body {
         display: none !important;
     }
 
-    /* search-input field */
-    .makeStyles-search-3 {
-        width: 60vw !important;
-        position: absolute !important;
-        left: 35% !important;
+    .jss3 {
+        width: 60vw;
+        position: absolute;
+        left: 35%;
     }
 
-    .makeStyles-searchIcon-4 {
-        padding-right: 10px !important;
-        padding-left: 10px !important;
+    .jss4 {
+        padding-right: 10px;
+        padding-left: 10px;
     }
 
     .account_icon {
