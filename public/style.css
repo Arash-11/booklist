@@ -237,8 +237,8 @@ body {
     }
 
     .account_icon {
-        margin-left: 0 !important;
-        transform: scale(1.3) !important;
+        margin-left: -60%;
+        transform: scale(1.4);
     }
 
     .form_style {
