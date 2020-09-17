@@ -226,20 +226,20 @@ body {
     }
 
     /* material-ui search bar */
-    .jss3, .makeStyles-search-3 {
+    div.jss3, .makeStyles-search-3 {
         width: 60vw;
         position: absolute;
         left: 35%;
     }
 
     /* material-ui search icon */
-    .jss4, .makeStyles-searchIcon-4 {
+    div.jss4, .makeStyles-searchIcon-4 {
         padding-right: 10px !important;
         padding-left: 10px !important;
     }
 
     /* material-ui search input field */
-    .jss6, .makeStyles-inputInput-6 {
+    input.jss6, .makeStyles-inputInput-6 {
         width: 40vw !important;
     }
 
