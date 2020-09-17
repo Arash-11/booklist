@@ -229,7 +229,7 @@ body {
     .makeStyles-search-3 {
         width: 60vw !important;
         position: absolute !important;
-        left: 35%;
+        left: 35% !important;
     }
 
     .makeStyles-searchIcon-4 {
@@ -238,8 +238,8 @@ body {
     }
 
     .account_icon {
-        margin-left: 0;
-        transform: scale(1.3);
+        margin-left: 0 !important;
+        transform: scale(1.3) !important;
     }
 
     .form_style {
