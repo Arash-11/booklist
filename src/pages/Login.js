@@ -63,7 +63,7 @@ function Login() {
                     inputProps={{ 'aria-label': 'description' }}
                     onChange={handleChange}
                     className="emailTextField"
-                    style={{ marginTop: '5%', width:'80%' }}
+                    style={{ marginTop: '7%', width:'82%' }}
                 />
                 <TextField
                     type="password"
@@ -73,7 +73,7 @@ function Login() {
                     inputProps={{ 'aria-label': 'description' }}
                     onChange={handleChange}
                     className="passwordTextField"
-                    style={{ marginTop: '5%', width:'80%' }}
+                    style={{ marginTop: '7%', width:'82%' }}
                 />
                 <Button variant="contained" type="submit" className="form_button">
                     <h4 className="main_text">Login</h4>

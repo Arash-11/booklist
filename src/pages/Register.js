@@ -87,7 +87,7 @@ function Register() {
                     value={email}
                     onChange={handleChange}
                     label="Email Address"
-                    style={{ marginTop: '5%', width:'80%' }}
+                    style={{ marginTop: '7%', width:'82%' }}
                 />
                 <TextField
                     type="password"
@@ -95,7 +95,7 @@ function Register() {
                     value={password}
                     onChange={handleChange}
                     label="Password (min. 6 characters)"
-                    style={{ marginTop: '5%', width: '80%' }}
+                    style={{ marginTop: '7%', width: '82%' }}
                 />
                 <TextField
                     type="password"
@@ -103,7 +103,7 @@ function Register() {
                     value={confirmPassword}
                     onChange={handleChange}
                     label="Confirm Password"
-                    style={{ marginTop: '5%', width:'80%' }}
+                    style={{ marginTop: '7%', width:'82%' }}
                 />
                 <Button variant="contained" type="submit" className="form_button">
                     <h4 className="main_text">Register</h4>
