@@ -18,7 +18,7 @@ function FormNavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className="AppBar_backgroundColor">
+      <AppBar position="static" className="AppBar">
         <Toolbar>
             <Typography className={classes.title} variant="h4" noWrap style={{ padding: '1.2%' }}>
                 <i className="fas fa-bookmark searchAppBar_icon"></i>
