@@ -62,9 +62,9 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     [theme.breakpoints.down('sm')]: {
-      width: '1ch',
+      width: '10ch',
       '&:focus': {
-        width: '1ch',
+        width: '10ch',
       },
     },
   },
@@ -118,7 +118,7 @@ function MainpageNavBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" className="AppBar_backgroundColor">
+      <AppBar position="static" className="AppBar">
         <Toolbar>
           <Typography className={classes.title + ' app_title'} variant="h5" noWrap style={{ padding: '1.2%' }}>
             <i className="fas fa-bookmark searchAppBar_icon"></i>
@@ -129,7 +129,7 @@ function MainpageNavBar(props) {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search book or author…"
+              placeholder="Search"
               onChange={handleChange}
               classes={{
                 root: classes.inputRoot,
