@@ -1,6 +1,8 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/96a68bdf-4a65-443a-bf05-cc832cd2dcca/deploy-status)](https://app.netlify.com/sites/abooklist/deploys)
 
-See live site here: https://abooklist.netlify.app/
+Live site: https://abooklist.netlify.app/
+
+![Preview image of website](https://github.com/Arash-11/booklist/blob/master/booklist-pic.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
