@@ -2,7 +2,7 @@
 
 Live site: https://abooklist.netlify.app/
 
-![Preview image of website](https://github.com/Arash-11/booklist/blob/master/booklist-pic.png)
+![Preview image of website](https://github.com/Arash-11/booklist/blob/master/booklist.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
