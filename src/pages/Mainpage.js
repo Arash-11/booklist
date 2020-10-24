@@ -18,7 +18,7 @@ function Mainpage() {
           // User is signed in.
           userID = user.uid;
         }
-      });
+    });
 
 
     useEffect(() => {
@@ -123,7 +123,7 @@ function Mainpage() {
             });
         }, 800);
     }
-    
+
 
     return (
         <>
