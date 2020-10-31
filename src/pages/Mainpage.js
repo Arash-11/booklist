@@ -104,24 +104,23 @@ function Mainpage() {
             .delete()
             .then(function(docRef) {
                 console.log("Document successfully deleted!");
+                setTimeout(() => {
+                    setBooks(bookArray => {
+                        return bookArray.filter(item => {
+                            return item.id !== id;
+                        });
+                    });
+            
+                    setBooksToDisplay(bookArray => {
+                        return bookArray.filter(item => {
+                            return item.id !== id;
+                        });
+                    });
+                }, 800);
             })
             .catch(function(error) {
                 console.error("Error removing document: ", error);
             });
-
-        setTimeout(() => {
-            setBooks(bookArray => {
-                return bookArray.filter(item => {
-                    return item.id !== id;
-                });
-            });
-    
-            setBooksToDisplay(bookArray => {
-                return bookArray.filter(item => {
-                    return item.id !== id;
-                });
-            });
-        }, 800);
     }
 
 
