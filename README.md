@@ -21,9 +21,9 @@ You can check the live site here: https://abooklist.netlify.app/
 
 ## About the project
 
-BookList is a website to store and record the list of books you're interested in reading. Using Firebase as the backend, I have implemented authentication as well, so that each user can save their data and access it from anywhere.
+BookList is a website to store and record the list of books you're interested in reading. Using Firebase for the backend, I have implemented authentication as well, so that each user can save their data and access it from anywhere.
 
-The UI has been inspired by Google Keep, and I have used the Material UI library for the majority of the styling.
+The UI has been inspired by Google Keep, and I have used the Material UI library for the majority of the styling. The website is responsive to make sure a user has a good experience using the site no matter what device they're on.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and has been deployed on Netlify.
 
