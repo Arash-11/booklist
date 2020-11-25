@@ -1,10 +1,44 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/96a68bdf-4a65-443a-bf05-cc832cd2dcca/deploy-status)](https://app.netlify.com/sites/abooklist/deploys)
+# BookList
 
-Live site: https://abooklist.netlify.app/
+*A website to store the list of books you'd like to read in one place.*
+
+<br />
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/96a68bdf-4a65-443a-bf05-cc832cd2dcca/deploy-status)](https://app.netlify.com/sites/abooklist/deploys)
+![Website](https://img.shields.io/website?down_color=lightgrey&down_message=down&up_color=green&up_message=up&url=https%3A%2F%2Fabooklist.netlify.app%2F)
+![GitHub top language](https://img.shields.io/github/languages/top/Arash-11/booklist)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Arash-11/booklist)
+![GitHub repo size](https://img.shields.io/github/repo-size/Arash-11/booklist)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/Arash-11/booklist)
+
+<br />
+
+You can check the live site here: https://abooklist.netlify.app/
 
 ![Preview image of website](https://github.com/Arash-11/booklist/blob/master/booklist.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br />
+
+## About the project
+
+BookList is a website to store and record the list of books you're interested in reading. Using Firebase as the backend, I have implemented authentication as well, so that each user can save their data and access it from anywhere.
+
+The UI has been inspired by Google Keep, and I have used the Material UI library for the majority of the styling.
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and has been deployed on Netlify.
+
+<br />
+
+## Technologies used
+
+- HTML / SCSS
+- ReactJS
+- Material UI
+- Firebase
+- Cloud Firestore
+- Netlify
+
+<br />
 
 ## Available Scripts
 
